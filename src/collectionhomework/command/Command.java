@@ -6,5 +6,5 @@ import java.util.ArrayList;
 
 public interface Command {
 
-    public void execute(ArrayList<Integer> array) throws IOException;
+    void execute(ArrayList<Integer> array) throws IOException;
 }

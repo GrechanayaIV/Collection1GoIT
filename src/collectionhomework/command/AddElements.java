@@ -14,11 +14,13 @@ public class AddElements implements Command {
         try {
             int elements = ConsolHelper.readInt();
             array.add(elements);
-            ConsolHelper.writeMessage("Operation is successful");
+            ConsolHelper.writeMessage("Operation is successful. Array :");
+            for (int i = 0; i < array.size(); i++) {
+                System.out.print(array.get(i) + " ");
+            }
+            System.out.println();
         } catch (Exception e) {
             ConsolHelper.writeMessage("Error ! Such an element can not be added to an array of integers");
         }
-
-
     }
 }

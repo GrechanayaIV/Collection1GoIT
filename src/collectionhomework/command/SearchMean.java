@@ -13,8 +13,16 @@ public class SearchMean implements Command {
         for (int i = 0; i < array.size(); i++) {
             sum += array.get(i);
         }
-        double mean =sum / array.size();
-        ConsolHelper.writeMessage("Arithmetical mean of elements: " + mean);
+        try {
+            if (array.size() == 0) {
+                throw new Exception();
+            } else {
+                double mean = sum / array.size();
+                ConsolHelper.writeMessage("Arithmetical mean of elements: " + mean);
+            }
+        } catch (Exception e) {
+            ConsolHelper.writeMessage("Error ! It is impossible to count");
+        }
 
     }
 }

@@ -8,9 +8,6 @@ public class MainClass {
     public static void main(String[] args) {
         ArrayList<Integer> arrayList = new ArrayList<>();
 
-        arrayList.add(4);
-        arrayList.add(5);
-
 
         Operation operation;
         while (true) {
