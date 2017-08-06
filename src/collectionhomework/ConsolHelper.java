@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 
 
 public class ConsolHelper {
+
     private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     public static void writeMessage(String message) {
@@ -13,7 +14,8 @@ public class ConsolHelper {
     }
 
     public static int readInt() throws IOException {
-        int numOfMenu = Integer.valueOf(reader.readLine());
-        return numOfMenu;
+
+        return Integer.valueOf(reader.readLine());
     }
 }
+

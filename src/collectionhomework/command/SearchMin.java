@@ -13,7 +13,7 @@ public class SearchMin implements Command {
     @Override
     public void execute(ArrayList<Integer> array) throws IOException {
 
-        ConsolHelper.writeMessage("Minimum is: " + Collections.max(array));
+        ConsolHelper.writeMessage("Minimum is: " + Collections.min(array));
 
     }
 }

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 
-
 public class MainClass {
     public static void main(String[] args) {
         ArrayList<Integer> arrayList = new ArrayList<>();
@@ -19,8 +18,8 @@ public class MainClass {
             try {
                 operation = askOperation();
                 CommandExecutor.execute(operation, arrayList);
-                showArray(arrayList);
                 if (operation == Operation.EXIT) break;
+
             } catch (Exception e) {
                 ConsolHelper.writeMessage("There was an error, check the entered data");
             }
@@ -43,9 +42,5 @@ public class MainClass {
         return Operation.values()[ConsolHelper.readInt() - 1];
     }
 
-    public static void showArray(ArrayList<Integer> array) {
-        for (int i = 0; i < array.size(); i++) {
-            System.out.print(array.get(i) + " ");
-        }
-    }
+
 }

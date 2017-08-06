@@ -10,6 +10,6 @@ import java.util.Collections;
 public class SearchMax implements Command {
     @Override
     public void execute(ArrayList<Integer> array) throws IOException {
-        ConsolHelper.writeMessage("Maximum is: " + Collections.min(array));
+        ConsolHelper.writeMessage("Maximum is: " + Collections.max(array));
     }
 }
