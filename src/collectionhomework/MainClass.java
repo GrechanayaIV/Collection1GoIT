@@ -7,9 +7,9 @@ import java.util.ArrayList;
 public class MainClass {
     public static void main(String[] args) {
         ArrayList<Integer> arrayList = new ArrayList<>();
-        for (int i = 0; i < 7; i++) {
-            arrayList.add(i);
-        }
+
+        arrayList.add(4);
+        arrayList.add(5);
 
 
         Operation operation;
