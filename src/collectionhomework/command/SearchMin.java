@@ -4,17 +4,16 @@ import collectionhomework.ConsolHelper;
 
 import java.io.IOException;
 
+import java.util.ArrayList;
 import java.util.Collections;
 
 
-/**
- * Created by Інна on 05.08.2017.
- */
+
 public class SearchMin implements Command {
     @Override
-    public void execute() throws IOException {
+    public void execute(ArrayList<Integer> array) throws IOException {
 
-        ConsolHelper.writeMessage("Maximum is: " + Collections.max(array));
+        ConsolHelper.writeMessage("Minimum is: " + Collections.max(array));
 
     }
 }

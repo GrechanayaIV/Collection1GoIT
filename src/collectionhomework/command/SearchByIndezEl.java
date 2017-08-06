@@ -3,23 +3,22 @@ package collectionhomework.command;
 import collectionhomework.ConsolHelper;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
-/**
- * Created by Інна on 05.08.2017.
- */
-public class SearchByIndezEl  implements Command{
+
+public class SearchByIndezEl implements Command {
     @Override
-    public void execute() throws IOException {
+    public void execute(ArrayList<Integer> array) throws IOException {
         ConsolHelper.writeMessage("Enter element`s number to search: ");
-        int index = Integer.valueOf(ConsolHelper.readInt());
-        search(index);
+        int index = ConsolHelper.readInt();
+        search(index, array);
 
     }
 
-    public void  search(int index){
-        for(int i = 0; i< array.size(); i++){
-            if(i==index){
-                System.out.println("This element is: "+ array.get(i));
+    public void search(int index, ArrayList<Integer> array) {
+        for (int i = 0; i < array.size(); i++) {
+            if (i == index) {
+                System.out.println("This element is: " + array.get(i));
             }
         }
     }

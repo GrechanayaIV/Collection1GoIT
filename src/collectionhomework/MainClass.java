@@ -3,37 +3,49 @@ package collectionhomework;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static collectionhomework.command.Command.array;
 
-/**
- * Created by Інна on 05.08.2017.
- */
+
 public class MainClass {
-    public static void main(String[] args)throws IOException{
-       for(int i =0; i< 7; i++){
-           array.add(i);
-       }
+    public static void main(String[] args) {
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        for (int i = 0; i < 7; i++) {
+            arrayList.add(i);
+        }
 
 
         Operation operation;
-        try{
-            operation = askOperation();
-            CommandExecutor.execute(operation);
+        while (true) {
 
-        }catch (Exception e){
-            ConsolHelper.writeMessage("There was an error, check the entered data");
+            try {
+                operation = askOperation();
+                CommandExecutor.execute(operation, arrayList);
+                showArray(arrayList);
+                if (operation == Operation.EXIT) break;
+            } catch (Exception e) {
+                ConsolHelper.writeMessage("There was an error, check the entered data");
+            }
+
         }
 
+
     }
-    public static Operation askOperation() throws IOException{
+
+    public static Operation askOperation() throws IOException {
         ConsolHelper.writeMessage("Select an operation:");
-        ConsolHelper.writeMessage("1. Add an element"+ Operation.ADD.ordinal());
-        ConsolHelper.writeMessage ("2. Remove element; "+Operation.REMOVE.ordinal());
-        ConsolHelper.writeMessage ("3.Search element by value;"+Operation.SEARChBYVALUE.ordinal());
-        ConsolHelper.writeMessage("4. Search element by index"+Operation.SEARCHBYINDEX.ordinal());
-        ConsolHelper.writeMessage("5. Maximum element"+Operation.SEARCHMAX.ordinal());
-        ConsolHelper.writeMessage("6.Minimum element"+Operation.SEARCHMIN.ordinal());
-        ConsolHelper.writeMessage("7.Arithmetical mean of elements"+Operation.SEARCHMEAN.ordinal());
-        return Operation.values()[ConsolHelper.readInt()];
+        ConsolHelper.writeMessage("1. Add an element - " + (Operation.ADD.ordinal() + 1));
+        ConsolHelper.writeMessage("2. Remove element - " + (Operation.REMOVE.ordinal() + 1));
+        ConsolHelper.writeMessage("3. Search element by value - " + (Operation.SEARChBYVALUE.ordinal() + 1));
+        ConsolHelper.writeMessage("4. Search element by index - " + (Operation.SEARCHBYINDEX.ordinal() + 1));
+        ConsolHelper.writeMessage("5. Maximum element - " + (Operation.SEARCHMAX.ordinal() + 1));
+        ConsolHelper.writeMessage("6. Minimum element - " + (Operation.SEARCHMIN.ordinal() + 1));
+        ConsolHelper.writeMessage("7. Arithmetical mean of elements - " + (Operation.SEARCHMEAN.ordinal() + 1));
+        ConsolHelper.writeMessage("8. exit - " + (Operation.EXIT.ordinal() + 1));
+        return Operation.values()[ConsolHelper.readInt() - 1];
+    }
+
+    public static void showArray(ArrayList<Integer> array) {
+        for (int i = 0; i < array.size(); i++) {
+            System.out.print(array.get(i) + " ");
+        }
     }
 }
